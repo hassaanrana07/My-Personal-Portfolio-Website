@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* stylelint-disable-next-line at-rule-no-unknown */
+:root {
+  --bg-color: #121212;
+  --color-primary: #121212;
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-inter);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+canvas {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.border-text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glass-morphism:hover {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Scroll Entrance Animations */
+.anim-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.anim-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Page Element Entrance */
+@keyframes slideReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.reveal-card {
+  animation: slideReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
