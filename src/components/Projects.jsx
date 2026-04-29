@@ -10,7 +10,8 @@ import {
   Terminal,
   FileSearch,
   CheckCircle2,
-  Dot
+  Dot,
+  Github
 } from 'lucide-react';
 
 const Projects = () => {
@@ -36,28 +37,30 @@ const Projects = () => {
         { phase: "Phase 2: Alpha Testing", date: "Apr - Jun 2023" }
       ],
       version: "V2.4.0",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvcGVydHl8ZW58MHx8MHx8fDA%3D"
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvcGVydHl8ZW58MHx8MHx8fDA%3D",
+      github: "https://github.com/hassaanrana07/Rent-Bro---Property-and-Rental-Management-System.git"
     },
     {
       id: 1,
-      title: "HRMS Portal",
-      shortTitle: "HRMS Portal",
-      category: "Payroll & Resource Management",
-      badge: "8 Modules",
-      stack_primary: "VUE.JS",
+      title: "Personal Portfolio Website",
+      shortTitle: "Portfolio",
+      category: "Frontend Development",
+      badge: "Responsive",
+      stack_primary: "REACT",
       icon: Users2,
-      description: "A comprehensive Human Resource Management System built for mid-sized enterprises. Streamlines the entire employee lifecycle from recruitment and onboarding to automated payroll processing and performance evaluations.",
-      tech: ["Laravel", "Vue.js", "Inertia.js", "MySQL", "PostgreSQL", "JWT"],
+      description: "A modern, interactive personal portfolio website showcasing projects, skills, and professional experience with high-end animations and responsive design.",
+      tech: ["React.js", "Tailwind CSS", "Vite"],
       status: [
-        { label: "Payroll Module", value: "100%" },
-        { label: "Recruitment", value: "95%" }
+        { label: "UI/UX Design", value: "100%" },
+        { label: "Development", value: "100%" }
       ],
       timeline: [
-        { phase: "Initial Release", date: "Aug - Oct 2023" },
-        { phase: "Module Expansion", date: "Nov - Dec 2023" }
+        { phase: "Initial Release", date: "Jan - Feb 2024" },
+        { phase: "Refinements", date: "Mar 2024" }
       ],
-      version: "V1.8.2",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1426&q=80"
+      version: "V1.0.0",
+      image: "/Profile.png",
+      github: "https://github.com/hassaanrana07/My-Personal-Portfolio-Website.git"
     },
     {
       id: 2,
@@ -78,7 +81,8 @@ const Projects = () => {
         { phase: "Field Testing", date: "Aug - Sep 2023" }
       ],
       version: "V3.1.0",
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8fDB8fHww"
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3RydWN0aW9ufGVufDB8fDB8fHww",
+      github: "https://github.com/hassaanrana07/Bulk-Beam-Construction-Management-System.git"
     },
     {
       id: 3,
@@ -103,7 +107,8 @@ const Projects = () => {
         { phase: "Testing & Refinements", date: "Feb 2025" }
       ],
       version: "V1.5.0",
-      image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=500&auto=format&fit=crop&q=60"
+      image: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=500&auto=format&fit=crop&q=60",
+      github: "https://github.com/hassaanrana07/AirSense.git"
     }
   ];
 
@@ -212,7 +217,7 @@ const Projects = () => {
                       <h5 className="text-[9px] uppercase tracking-[0.3em] font-black">Tech Stack</h5>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                       {current.tech.map((t, index) => (
+                      {current.tech.map((t, index) => (
                         <span key={index} className="text-[7px] md:text-[8px] font-bold text-orange-500/80 px-2 py-1 bg-orange-500/5 rounded-md border border-orange-500/10">
                           {t}
                         </span>
@@ -260,9 +265,9 @@ const Projects = () => {
                   <button className="flex-1 flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-500 py-4 rounded-xl text-black text-[9px] uppercase font-extrabold tracking-widest transition-all shadow-[0_10px_30px_rgba(249,115,22,0.2)]">
                     <ExternalLink size={14} /> View Live Demo
                   </button>
-                  <button className="flex-1 flex items-center justify-center gap-2 bg-white/[0.03] hover:bg-white/5 border border-white/10 py-4 rounded-xl text-white text-[9px] uppercase font-extrabold tracking-widest transition-all">
-                    <FileText size={14} /> Case Study
-                  </button>
+                  <a href={current.github} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 bg-white/[0.03] hover:bg-white/5 border border-white/10 py-4 rounded-xl text-white text-[9px] uppercase font-extrabold tracking-widest transition-all">
+                    <Github size={14} /> GitHub Repo
+                  </a>
                 </div>
 
               </div>
